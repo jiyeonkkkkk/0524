@@ -1,0 +1,616 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://kit.fontawesome.com/06666754a7.js" crossorigin="anonymous"></script>
+	<style>
+		* {margin:0; box-sizing: border-box; font-family: "맑은 고딕";}	
+		ul, ol, li {list-style:none; margin: 0; padding: 0;}
+		table, #review1, tr, th ,td {margin:0; padding:0; }
+
+
+		/* 헤더 */
+		header {width: 1600px; height: 80px; margin: 0 auto;}
+		#logo {width: 300px; height: 80px; float: left; padding: 10px 0 0 0px;}
+		#logo2 {width: 850px; height: 80px; float: right; margin: 0px 0 0 100px; margin: 0px -150px 0 0px;}
+
+		#logo2 > ul {font-size: 13px;}
+		#logo2 > ul > li {float: left; margin: 30px 10px;}
+		#logo2 > ul > li > a {text-decoration: none; color: #666;}
+		#logo2 > ul > li > a:hover {opacity: 0.8;}
+		#logo2 > ul > a > img {padding: 25px 0 0 0px;}
+
+		#login {width: 300px; height: 80px; float: right;}
+		#login > .imgbox > a > img {float: right; margin: 10px 0 0 0px; padding:10px;}
+
+		nav {width: 1260px; height: 70px; margin: 0 auto; font-weight:bold;}
+		nav > ul {font-size: 17px;}
+		nav > ul > li {float: left;  margin: 20px 70px 0 70px;}
+		nav > ul > li > a {text-decoration: none; color: #000;}
+		nav > ul > li > a:hover {color: orange;}
+
+		#category {width: 1150px; height: 100px; margin: 0 auto;}
+		#category > a > img {float: left; margin: 10px 0 0 0px; padding:10px;}
+
+
+
+		/* 구매창 */
+		#buy {width: 1150px; height: 1000px; margin: 0 auto;}
+		#product {width: 672px; height: 672px;; margin: 10px; float: left;}
+		#context1 {width: 400px; height: 230px;  margin: 10px 20px; float: right; padding: 30px 0 0 0px;}
+
+		#context1 > h1 > a {text-decoration:none; color: #000; text-align:left; font-size: 24px; line-height:32px; 
+			display:inline-block; letter-spacing: -1px;}
+			#context1 > .free {content: "무료배송"; background-color:#fff; color: #000; margin: 10px 0 0 0px; padding: -5px; font-size:10px; display:inline; width:45px; border: 1px solid #000;}
+
+			#context1 > .new {content: "NEW"; background-color:orange; color: #fff; display:inline; font-size: 10px; margin: 10px 0 0 0px; padding: 0px; font-size:11px;}
+			#context1 > .price > a	{text-decoration:none; color: #666; font-size: 14px; display: block;}
+			#context1 > .price2 > a {text-decoration:none; color: orange; font-weight:bold; text-align:center; font-size: 20px; line-height:1px;}
+
+
+			#context2 {width: 400px; height: 230px;  margin: 10px 20px; float: right; position: relative;}
+			#context2 > table {width:100%; height: 170px; border-top: 1px solid #fff; border-bottom: 1px solid #fff; font-size: 12px; position: absolute; top: 10px; left: 5px; float: right;}
+			#context2 >	td {margin: -10px; padding: -10px; float: right;}
+			#context2 > table > td:first-child {width: 100%; float: left; border-bottom: 1px solid #eee;}
+			#context2 > table > td:nth-child(2)  {border-bottom: 1px solid #eee;}
+			#context2 > table > td:last-child  {border-bottom: 1px solid #eee;}
+
+
+			#context2 >	table > td > img {width: 30px; height: 15px; }
+
+
+
+
+			#context3 {width: 400px; height: 380px;  margin: 10px 20px; float: right;}
+			#context3 > h1 {text-decoration:none; color: #000; text-align:left; font-size: 22px; line-height:32px; display:inline-block;}
+			#context3 > a > img {margin: 10px 0 0 0px;}
+
+
+
+
+
+
+			/* 상품 설명 디테일 */
+			main {width: 1150px; height: 4900px;margin: 0 auto;}
+			#details > h1 {font-weight:bold; font-size:30px; letter-spacing: -2px; padding:10px 0 10px 0px; text-align:center;}
+			#details > p {font-size:14px; color: #666; text-align:center; color: #666; line-height:28px; margin: 0px 0 20px 0px;}
+			#details > a > img {width: 70%; margin:0px 0 0 180px;}
+			
+			#details > .bobo {font-size:20px; color: #666; line-height:33px; font-weight:bold; margin: 10px 0px; text-align:center;}
+
+
+
+
+			/* 주의사항 */
+
+			#care {width: 1150px; height: 900px; margin: 0 auto;}
+			#care > h1 {font-weight:bold; font-size: 18px; color: #000; padding: 20px 0 10px 0px;}
+			#care > p {font-size: 13px; color: #666; line-height:28px;}
+			#care > span {font-size: 11px; color: #666; line-height:28px; margin: 50px 0 0 20px; display:block;}
+			#care > img {width: 100%; margin: 10px 0 0 0px;}
+
+
+
+
+
+
+
+			/* 리뷰 */
+
+			#review {width: 1150px; height:490px;  margin: 0 auto; padding: 120px 0 0 0px;}
+			#review  .review1 {display:inline-block; margin:0px auto; border-top:1px solid #bbb; line-height:50px; width:100%; height:100%; font-size:13px; color:#333;}
+			#review  .review1  th {width:80px; border-bottom: 1px solid #eee; color: #000;}
+			#review  .review1  tr  td  a:after {color: #fff; background-color: skyblue; content: "HIT"; border-radius:3px; padding: 1px 1px;}
+			#review  .review1  td:first-of-type {width:800px; }
+			#review  .review1  td:nth-of-type(2) {width:80px; text-align:center; border-bottom: 1px solid #eee; margin: 0px 0 0 50px;}
+			#review  .review1  td:nth-of-type(3) {width:120px; text-align:center; border-bottom: 1px solid #eee;}
+			#review  .review1  td:last-of-type {width:150px; text-align:center; border-bottom: 1px solid #eee;}
+			#review  .review1  td a {text-decoration:none; color: #000;}
+			#review  .review1  td {border-bottom: 1px solid #eee;}
+
+			#review > h1 {font-weight:bold; font-size:29px; float: left; letter-spacing: -2px;}
+			#review > p {font-size:14px; float: left; letter-spacing: -2px; padding: 18px 4px; color: #666; font-weight:bold;}
+			#review > button {background-color: black; color: white; text-align:center; float: right; padding: 14px 32px; font-size: 14px; border: none; margin:0 auto;}
+
+
+
+
+
+			/* 리뷰 	버튼 */
+
+			.btn ul{font-size:12px; color:#eee;font-weight:bold; text-align: center; margin: -20px  0 0 0px;}
+
+			.btn li {padding:5px 10px; display:inline-block; background-color:#fff; border: 1px solid #bbb; text-decoration:none;}
+
+
+			.btn li:first-child {border: 2px solid #000; font-weight: bold;}
+
+			.btn li > a { text-decoration:none; color:#000;}
+
+
+
+
+			/* 큐엔에이 */
+
+			#qa {width: 1150px; height: 270px; margin: 0 auto;}
+			#qa > .review2 {display:inline-block; margin:0px auto; border-top:1px solid #bbb; line-height:50px; width:100%; height:100%; font-size:13px; color:#333;}
+			#qa  .review2  th {width:80px; border-bottom: 1px solid #eee; color:orange; font-weight:bold;}
+			#qa  .review2  tr  td  a:after {color: #fff; background-color:#fff; content: "HIT"; border-radius:3px; padding: 1px 1px;}
+			#qa  .review2  td:first-of-type {width:800px; }
+			#qa  .review2  td:nth-of-type(2) {width:80px; text-align:center; border-bottom: 1px solid #eee; margin: 0px 0 0 50px;}
+			#qa  .review2  td:nth-of-type(3) {width:120px; text-align:center; border-bottom: 1px solid #eee;}
+			#qa  .review2  td:last-of-type {width:150px; text-align:center; border-bottom: 1px solid #eee;}
+			#qa  .review2  td a {text-decoration:none; color: #000;}
+			#qa  .review2  td {border-bottom: 1px solid #eee;}
+
+			#qa > h1 {font-weight:bold; font-size:29px; float: left; letter-spacing: -2px;}
+			#qa > p {font-size:14px; float: left; letter-spacing: -2px; padding: 18px 4px; color: #666; font-weight:bold;}
+			#qa > button {background-color: black; color: white; text-align:center; float: right; padding: 14px 32px; font-size: 14px; border: none; margin: 6px 0px;}
+
+
+			/* 큐엔에이 버튼 */
+			.btn2 ul{font-size:12px; color:#666; font-weight:bold; text-align: center; margin: -20px  0 0 0px;}
+			.btn2 li {border: 2px solid #000; font-weight: bold; display:inline-block; padding:5px 10px;  text-decoration:none;}
+			.btn2 li > a { text-decoration:none; color:#000;}
+
+
+
+			/* 브랜드 */
+
+			#brand {width: 100%; height: 300px; background-color: black; margin:0 auto;}
+
+			#brand > h1 {color:#fff; text-align: center; padding: 60px 0 0 0px; margin:20px 0 0 0px;}
+			#brand > .line {color: #fff; text-align: center;}
+			#brand > .shop {color: #fff; text-align: center; padding: 10px; border: 1px solid #fff; display:inline-block; margin: 60px 0 0 755px; font-size: 13px; letter-spacing: 3px;}
+
+
+
+
+
+
+			/* 유라이크 */
+
+			#like {width: 1150px; height: 500px; margin:0 auto; padding: 30px 0 80px 0px;}
+			#like > h1 {font-weight:bold; font-size:30px; float: left; letter-spacing: -2px;}
+
+			#like > .box {width: 280px; height: 400px;  margin: 0 auto; display:inline-block; overflow:hidden; margin: 1px;}
+			#like > .box > a > img {width:100%; height: 270px;}
+			#like > .box > a > img:hover {opacity: 0.8;}
+
+			#like > .box > h5 > a {text-decoration:none; color: #000;  font-size: 11px;}
+			#like > .box > .name > a {text-decoration:none; color: #666;  font-size: 12px;}
+			#like > .box > .pr {text-decoration:none; color: #666; font-size: 11px; display: block;}
+			#like > .box > .pr2 {text-decoration:none; color: #000; font-size: 11px;}
+			#like > .box > span {content: "NEW"; background-color:orange; color: #fff; display:inline-block; font-size: 10px; margin: 10px 0 0 0px; padding: 0px; font-size:11px;}
+			#like > .box > .deli {content: "무료배송"; background-color:#fff; color: #000; display:inline-block; border: 1px solid #ddd; font-size: 10px; margin: 10px 0 0 0px; padding: 0px; font-size:11px;}
+			#like > .box > p {display: inline; color: orange; font-weight:bold; font-size: 11px;}  
+
+
+
+			/* 푸터 */
+			footer {width: 1260px; height: 210px; margin:0 auto;}
+			footer > #box > ul {font-size: 12px; width: 900px; height: 40px; float: left; margin: 30px 0 0 0px;}
+			footer > #box > ul > li {float: left; font-size: 12px; margin:5px 10px;}
+			footer > #box > ul > li > a {text-decoration: none; color: #666;}
+			footer > #box > p {float: left; width: 900px; height: 40px; line-height: 150%; margin: 10px 0 0 10px; font-size: 12px; color: #666;}
+
+			footer > #sns > a> img {float: right; margin: 70px 0 0 0px; padding: 10px;}
+
+
+		</style>
+
+
+
+
+
+	</head>
+	<body>
+		<header>
+
+			<!-- 헤더 -->
+
+			<div id="logo">
+				<img src="img/logo_img.img" alt="로고">
+			</div>
+
+			<div id="login">
+				<div class="imgbox">
+					<a href="#"><img src="img/d.jpg" alt="로그인1"></a>
+					<a href="#"><img src="img/j.jpg" alt="로그인1"></a>
+					<a href="#"><img src="img/p.jpg" alt="로그인1"></a>
+
+				</div>
+
+			</div>
+
+			<div id="logo2">
+				<ul>
+					<li><a href="#">BRAND</a></li>
+					<li><a href="#">BEST</a></li>
+					<li><a href="#">SALE</a></li>
+					<li><a href="#">REVIEW</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="#">MAGAZINE</a></li>
+					<a href="#"><img src="img/book.jpg" alt="book"></a>
+				</ul>
+
+			</div>
+
+		</header>
+		<hr>
+		<nav>
+
+			<ul>
+				<li><a href="#">KITCHEN</a></li>
+				<li><a href="#">LIVING</a></li>
+				<li><a href="#">LIFE</a></li>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">PET</a></li>
+				<li><a href="#">FOOD</a></li>
+			</ul>
+		</nav>
+		<hr>
+
+
+
+
+		<!-- 구매창 -->
+
+		<div id="category">
+			<a href="#"><img src="img/category.jpg" alt="카테고리"></a>
+		</div>
+
+		<div id="buy">
+			<div id="product">
+				<a href="#"><img src="img/product.jpg"></a>
+			</div>
+
+
+			<div id="context1">
+				<h1><a href="#">킨토 본보 4p 세트 3color<br>아기식기 유아식기 어린이집<br>물병 이유식용기</a></h1>
+				<p class="new">NEW</p>
+				<p class="free">무료배송</p>
+				<p class="price"><a href="#"><del>￦63,000</del></a></p>
+				<p class="price2"><a href="#">￦54,000</a></p>
+
+			</div>
+
+			<div id="context2">
+				<table>
+					<tr>
+						<th>배송기간</th>
+						<td>주문 후 3일 이내</td>
+					</tr>
+
+					<tr>
+						<th>배송비</th>
+						<td>총 결제금액이 50,000원 미만시 <br>배송비 2,500원이 청구됩니다.<pre></td>
+						</tr>
+						<tr>
+							<th>제품선택</th>
+							<td>
+								<select name="select" id="select">
+									<option>옵션 선택</option>
+									<option>옐로우</option>
+									<option>오렌지</option>
+									<option>핑크</option>
+									<option>그레이</option>
+									<option>블루그레이</option>
+								</select>
+
+							</td>
+						</tr>
+					</table>
+
+				</div>
+
+				<div id="context3">
+					<h1><pre>총 상품 금액                       <b>0</b>원</pre></h1>
+					<a href="#"><img src="img/buynow.jpg" alt="buynow"></a>
+				</div>
+			</div>
+
+			
+
+
+
+			<!-- 제품 상세설명 -->
+
+			<main>
+				<div id="details">
+					<a href="#"><img src="img/detail1.jpg" alt="디테일1"></a>
+					<br>
+					<h1>Item Details</h1>
+					<p>"아름다운 제품은 생활 공간에 자연스럽게 녹아 들어 우리의 일상을 아름답게 물들입니다."<br>
+						킨토KINTO는 45년 전통의 일본 키친웨어 전문회사로 뛰어난 감각의 프리미엄급 제품을 많은 사랑을 받아 오고 있는 브랜드입니다.<br>
+						
+						계절에 따라 변하는 섬세한 자연의 아름다움을 느끼며 가까운 지인과 따뜻한 요리로 휴식같은 치유함을 얻고<br>
+						 내 손에 가장 익숙한 물건 속에서 느껴지는 편안함을 가질 수 있도록 감성적인 디자인과<br>
+						 사용자를 배려한 뛰어난 기능성을 담아 좀 더 삶을 풍요롭게 만들고자 합니다.</p>
+					<br>
+
+					<a href="#"><img src="img/detail2.jpg" alt="디테일2"></a>
+					<br>
+					<p class="bobo">파스텔 색상의 어린이용 식기 4p 세트</p>
+					<p>부드러운 느낌의 디자인과 파스텔 컬러가 세련된 선물세트 입니다.<br>
+					가볍고 깨지지 않는 BPA free PCT수지 소재이므로, 아이들이 안심하고 사용하실 수 있습니다.</p>
+
+
+					<a href="#"><img src="img/detail3.jpg" alt="디테일3"></a><br>
+
+
+					<p>라운드형 디자인으로 손에 잡기 쉽고 편안한 사용성이 돋보이는 선물세트입니다.<br>
+					플레이트 24x22cm 1개, 빨대컵 1개, 스푼과 포크가 각 1개씩 구성되어 있습니다.</p>
+
+					<a href="#"><img src="img/detail4.jpg" alt="디테일4"></a>
+					<br>
+					<p class="bobo">부드러운 촉감과 질감</p>
+					<p>플레이트의 내면은 매끄럽고, 외면은 매트한 질감입니다.<br>
+					손에 익숙해지기 쉽고, 미끄러지지 않게 잡을 수 있고, 포크의 끝은 얇고 음식을 집기 쉬운 디자인입니다.</p>
+
+					<a href="#"><img src="img/detail5.jpg" alt="디테일5"></a>
+					<br>
+					<p class="bobo">사용하기 쉬운 설계</p>
+					<p>플레이트 안쪽에는 비스듬하게 되어있기 때문에 숟가락으로 음식을 담기 쉽고 편하게 먹을 수 있으며,<br> 
+					빨대컵의 빨대에는 누락 방지 스토퍼가 붙어 있기 때문에 아이가 당겨도 빠지지 않습니다.</p>
+
+					<a href="#"><img src="img/detail6.jpg" alt="디테일6"></a>
+					<a href="#"><img src="img/detail7.jpg" alt="디테일7"></a>
+
+
+
+				</div>
+
+
+
+
+			</main>
+
+
+
+			<!-- 주의 사항 -->
+
+
+			<div id="care">
+				<h1>*관리 및 주의사항</h1>
+				<p> - 제품이 파손될 수 있으므로 강한 충격을 가하지 마십시오.<br>
+					- 음료수용 텀블러입니다. 전자레인지에 사용하지 마세요.<br>
+					- 식기 세척기를 사용할 때 힘과 무게가 가해지지 않도록 상단 바구니에 보관하십시오.<br>
+					- 어린이의 손이 닿지 않는 곳에 보관. 제품을 흔들지 마십시요. 예기치 못한 부상이나 사고의 원인이 될 수 있습니다.<br>
+					- 뚜껑을 닫을 때 넘칠 수 있으므로 너무 많이 음료를 붓지 않도록 주의하십시오.<br>
+					- 운반 시 엎지르거나 누출되지 않도록 캡을 단단히 닫으십시오.<br>
+					- 실리콘 링이 올바르게 부착되었는지 확인하십시오.<br>
+					- 밀폐된 제품이 아니므로 옆으로 잡지 마십시요.<br>
+				- 차 안과 같이 고온의 장소에 두지 마세요.</p>
+
+
+				<span>제품명 : 킨토 본보 4p 세트 3color<br>재질 : [빨대컵] PCT수지, 폴리프로필렌, 실리콘고무, BPA free<br>[플레이트] 폴리프로필렌<br>[스푼] 폴리프로필렌<br>[포크] 폴리프로필렌
+					<br>
+					제조국 : 중국 OEM<br>
+				제조원 : 킨토(일본)</span>
+				<br>
+				<h1>*배송정보</h1>
+				<p>-배송비는 50,000원 이상 무료, 미만 시 2,500원입니다.<br>
+					-핸드메이드 제품은 주문접수 이후 제작에 들어가는 경우가 많으므로 제작 이후 최소 3일에서 길게는 2주 정도 까지 소요될 수 있습니다.<br>
+					-브랜드별 배송기준으로 출고되며 배송비 및 소요기간은 상품 설명페이지를 확인해 주시기 바랍니다.<br>
+					-주문상품 또는 예약상품의 경우 제작기간과 추가 배송일이 발생될 수 있습니다. 상품 설명페이지를 숙지해 주시기 바랍니다.<br>
+					-가구 및 일부 상품, 제주도를 포함한 도서 산간 지역은 배송비가 추가될 수 있습니다.<br></p>
+
+					<h1>*교환/환불/AS안내</h1>
+					<p>-상품 설명페이지에 반품/교환 관련 안내가 있는 경우 그 내용을 우선으로 합니다.<br>
+						-교환/반품 신청은 배송완료 후 7일 이내(주말포함)에 가능합니다.<br>
+						-포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 반품/환불이 불가합니다.<br>
+					-A/S기준이나 가능여부는 브랜드와 상품에 따라 다르므로 관련 문의는 포플 고객센터(02-3443-2850)로 문의해 주세요.</p><br>
+
+
+
+				</div>
+
+
+
+
+				<!-- 리뷰 -->
+
+				<div id="review">
+					<h1>Review</h1>
+					<p>사용후기는 해당 아이템의 구매 이후 작성 가능합니다.</p>
+					<button>후기작성</button>
+
+
+					<table class="review1">
+						<tr>
+							<th>487</th>
+							<td><a href="#">참외 오이 애호박 속 긁어내야 할 때 너무 좋아요</a></td>
+							<td>네이****</td>
+							<td>2022-04-11</td>
+						</tr>
+
+						<tr>
+							<th>486</th>
+							<td><a href="#">오이 씨뺄때 너무 유용할것같아요</a></td>
+							<td>네이****</td>
+							<td>2022-03-28</td>
+						</tr>
+
+						<tr>
+							<th>485</th>
+							<td><a href="#">트라이앵글은 믿고 사죠</a></td>
+							<td>네이****</td>
+							<td>2022-03-28</td>
+						</tr>
+
+						<tr>
+							<th>484</th>
+							<td><a href="#">사이즈 실패로 너무 큰걸 시킨듯해요 그래도 물건은 맘에 들어요</a></td>
+							<td>네이****</td>
+							<td>2022-03-28</td>
+						</tr>
+
+						<tr>
+							<th>483</th>
+							<td><a href="#">원래 원했던 제품 넘 좋아요</a></td>
+							<td>네이****</td>
+							<td>2022-03-27</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+
+				<!-- 버튼 -->
+				<div class="btn">
+					<ul>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+						<li><a href="#">7</a></li>
+						<li><a href="#">8</a></li>
+						<li><a href="#">9</a></li>
+						<li><a href="#">10</a></li>
+						<li><a href="#">next</a></li>
+						<li><a href="#">last</a></li>
+					</ul>
+				</div>
+
+
+
+
+				<!-- 큐엔에이 -->
+
+				<div id="qa">
+					<h1>Q&A</h1>
+					<p>상품에 대한 궁금한 점을 찾아보세요.</p>
+					<button>질문작성</button>
+
+
+
+					<table class="review2">
+						<tr>
+							<th>YES</th>
+							<td><a href="#">입고 (1)</a></td>
+							<td>이애*</td>
+							<td>2021-11-01 16:11:50</td>
+						</tr>
+
+						<tr>
+							<th>YES</th>
+							<td><a href="#">제품 문의 (1)</a></td>
+							<td>김미*</td>
+							<td>2021-08-21 19:08:58</td>
+						</tr>
+
+						<tr>
+							<th>YES</th>
+							<td><a href="#">품절 (1)</a></td>
+							<td>최선*</td>
+							<td>2021-07-03 14:07:51</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="btn2">
+					<ul>
+						<li><a href="#">1</a></li>
+
+					</ul>
+				</div>
+
+
+
+
+				<!-- 브랜드 -->
+
+				<div id="brand">
+					<h1><b>triangle</b></h1>
+					<p class="line">_____</p>
+					<p class="shop">CREATOR SHOP</p>
+				</div>
+
+
+
+
+
+				<!-- 유 라이크 -->
+
+				<div id="like">
+					<h1>You May Also Like</h1>
+					<br>
+					<br>
+
+					<div class="box">
+						<a href="#"><img src="img/like1.jpg" alt="라이크1"></a>
+						<h5><a href="#">J&T</a></h5>
+						<p class="name"><a href="#">코이누 스테인리스 사각 트레이 5종</a></p>
+						<p class="pr"><del>7,000</del></p>
+						<p class="pr2">6,300</p>
+						<p>[10%]</p>
+					</div>
+
+					<div class="box">
+						<a href="#"><img src="img/like2.jpg" alt="라이크2"></a>
+						<h5><a href="#">TIVOLI</a></h5>
+						<p class="name"><a href="#">티볼리 볼 3종</a></p><br>
+						<p class="pr2">15,600</p>
+						<span>NEW</span>
+
+					</div>
+
+					<div class="box">
+						<a href="#"><img src="img/like3.jpg" alt="라이크3"></a>
+						<h5><a href="#">igamono</a></h5>
+						<p class="name"><a href="#">이가모노 가마도상 3종 / 솥밥 뚝배기</a></p><br>
+						<p class="pr2">118,000</p>
+						<span class="deli">무료배송</span>
+					</div>
+
+					<div class="box">
+						<a href="#"><img src="img/like4.jpg" alt="라이크4"></a>
+						<h5><a href="#">jeanneron</a></h5>
+						<p class="name"><a href="#">장네론 라귀올 커트러리 마블 베이지 세트 / 라기올</a></p>
+						<p class="pr"><del>18,500</del></p>
+						<p class="pr2">14,800원</p>
+						<p>[20%]</p>
+					</div>
+
+
+				</div>
+
+
+
+				<!-- 푸터 -->
+
+
+				<hr><footer>
+					<div id="sns">
+						<a href=""#><img src="img/sns.jpg" alt="에스엔에스"></a>
+					</div>
+					<div id="box">
+						<ul>
+							<li><a href="#">About POPL</a></li>
+							<li><a href="#">약관 및 정책</a></li>
+							<li><a href="#">입점문의</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">대량주문 문의</a></li>
+							<li><a href="#">FAQ</a></li>
+						</ul>
+
+						<p>
+							사업자명:(주)디스토션 사업장소재지:서울특별시 강남구 논현로136길 23, 2층(논현동, JS빌딩) 고객센터:02-3443_2850 [평일 10:00~ ~ 18:00(토/일/공휴일 휴무)]<br>
+							이메일:cs@popl.co.kr 사업자등록번호:211-88-89258 통신판매업신고:제2015-서울강남-02714호<br>
+							대표이사:이향란 개인정보책임자:이동재<br>
+							<b>Copyright @ 2020 Dstortion corp. All Rights Reserved.</b>
+						</p>
+					</div>
+				</footer>
+
+
+
+
+			</body>
+			</html>
